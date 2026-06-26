@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face { font-family:'Fraunces'; src:url('file:///Users/sanjaybalasubramaniam/claude-b2b-launch/node_modules/@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2') format('woff2'); font-weight:100 900; font-display:swap; }
+  @font-face { font-family:'Inter'; src:url('file:///Users/sanjaybalasubramaniam/claude-b2b-launch/node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2'); font-weight:100 900; font-display:swap; }
+
+  :root{
+    --clay:#d97757; --clay-deep:#be5d3f; --ivory:#faf9f5; --cream:#f3eee5;
+    --ink:#1f1b17; --slate:#3d3833; --muted:#6b6258; --line:#e2dccf; --green:#4a7c59;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  @page{ size:A4; margin:14mm 14mm 16mm; }
+  html{ font-family:'Inter', system-ui, sans-serif; color:var(--ink); }
+  body{ background:var(--ivory); font-size:10.3pt; line-height:1.5; }
+  h1,h2,h3{ font-family:'Fraunces', Georgia, serif; font-weight:600; letter-spacing:-0.01em; }
+
+  /* Cover */
+  .cover{ height:265mm; display:flex; flex-direction:column; justify-content:center; page-break-after:always; }
+  .cover .eyebrow{ font-size:9pt; letter-spacing:0.24em; text-transform:uppercase; color:var(--clay-deep); font-weight:700; }
+  .cover h1{ font-size:34pt; line-height:1.05; margin:14px 0; max-width:150mm; }
+  .cover p{ font-size:12pt; color:var(--slate); max-width:140mm; }
+  .cover .meta{ margin-top:26px; font-size:9.5pt; color:var(--muted); border-top:1px solid var(--line); padding-top:14px; }
+  .sun{ width:54px; height:54px; border-radius:50%; background:radial-gradient(circle at 50% 60%, var(--clay) 0%, var(--clay-deep) 70%); margin-bottom:22px; }
+  .toc{ margin-top:22px; columns:2; column-gap:18px; font-size:9.5pt; }
+  .toc div{ break-inside:avoid; margin-bottom:5px; color:var(--slate); }
+  .toc b{ color:var(--clay-deep); }
+
+  /* Sections */
+  section{ page-break-before:always; }
+  .sec-head{ border-bottom:2px solid var(--clay); padding-bottom:6px; margin-bottom:14px; display:flex; align-items:baseline; gap:10px; }
+  .sec-head .n{ font-family:'Fraunces',serif; font-size:22pt; color:var(--clay); }
+  .sec-head h2{ font-size:16pt; }
+  .grid{ }
+  .term{ break-inside:avoid; padding:8px 0 8px 12px; border-left:3px solid var(--cream); margin-bottom:7px; }
+  .term:hover{}
+  .term .t{ font-family:'Fraunces',serif; font-weight:600; font-size:11.2pt; color:var(--ink); }
+  .term .ab{ font-size:8.5pt; color:var(--muted); font-weight:600; }
+  .term .d{ color:var(--slate); margin-top:2px; }
+  .term .p{ color:var(--clay-deep); margin-top:3px; font-size:9.3pt; }
+  .term .p b{ font-weight:700; }
+  .lead{ color:var(--muted); font-size:9.7pt; margin-bottom:14px; font-style:italic; }
+  .foot{ position:running(f); }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="sun"></div>
+  <div class="eyebrow">Soutenance · Stratégie Digitale</div>
+  <h1>Glossaire des termes clés</h1>
+  <p>Tous les acronymes et le jargon employés dans le projet de lancement B2B de Claude — expliqués simplement, avec leur rôle concret dans la présentation.</p>
+  <div class="toc">
+    <div><b>01</b> · Intelligence artificielle &amp; produit Claude</div>
+    <div><b>02</b> · Sécurité, conformité &amp; souveraineté</div>
+    <div><b>03</b> · SEO — référencement naturel</div>
+    <div><b>04</b> · Performance web (PageSpeed / Lighthouse)</div>
+    <div><b>05</b> · UX &amp; architecture de l'information</div>
+    <div><b>06</b> · Marketing B2B &amp; vente</div>
+    <div><b>07</b> · KPI &amp; finance</div>
+    <div><b>08</b> · Outils utilisés</div>
+    <div><b>09</b> · Stack technique &amp; déploiement</div>
+  </div>
+  <div class="meta">Lancement B2B de Claude (Anthropic) — annexe pédagogique · jycrain.github.io/claude-b2b-launch</div>
+</div>
+
+<!-- 01 -->
+<section>
+  <div class="sec-head"><span class="n">01</span><h2>Intelligence artificielle &amp; produit Claude</h2></div>
+  <p class="lead">Le vocabulaire du produit qu'on lance et de la technologie qui le sous-tend.</p>
+
+  <div class="term"><div class="t">IA générative</div><div class="d">Intelligence artificielle capable de <b>produire</b> du contenu nouveau (texte, code, images) plutôt que de seulement classer ou prédire. C'est la catégorie de marché du projet.</div></div>
+
+  <div class="term"><div class="t">LLM <span class="ab">— Large Language Model / grand modèle de langage</span></div><div class="d">Modèle d'IA entraîné sur d'immenses corpus de texte pour comprendre et générer du langage. Claude, ChatGPT et Gemini sont des LLM.</div></div>
+
+  <div class="term"><div class="t">Anthropic</div><div class="d">L'entreprise qui édite Claude, fondée en 2021, centrée sur la <b>sécurité de l'IA</b>. C'est « l'entreprise existante » dont on simule le lancement d'un nouveau produit.</div></div>
+
+  <div class="term"><div class="t">Opus / Sonnet / Haiku</div><div class="d">Les trois tailles de modèles Claude : <b>Opus</b> (le plus puissant, raisonnement complexe), <b>Sonnet</b> (équilibre qualité/coût, le modèle par défaut), <b>Haiku</b> (le plus rapide et économique, gros volumes).</div></div>
+
+  <div class="term"><div class="t">Token</div><div class="d">Unité de base que lit/écrit un LLM (≈ ¾ d'un mot). La facturation et la longueur des échanges se comptent en tokens.</div></div>
+
+  <div class="term"><div class="t">Fenêtre de contexte</div><div class="d">Quantité de texte (en tokens) que le modèle peut « avoir en tête » en une seule fois. Claude en propose une très large (~1 million de tokens) : ingérer un contrat ou une base de code entière d'un coup.</div></div>
+
+  <div class="term"><div class="t">Claude Code</div><div class="d">L'outil de <b>programmation agentique</b> de Claude : il lit un dépôt de code, écrit, teste et ouvre des « pull requests » de façon autonome — pas seulement des suggestions. <span class="p"><b>→ dans le projet :</b> c'est aussi l'outil qui a servi à coder cette présentation.</span></div></div>
+
+  <div class="term"><div class="t">Agentique / Agent IA</div><div class="d">Une IA qui <b>exécute</b> des tâches en plusieurs étapes de façon autonome (agir), au lieu de seulement répondre. Tendance forte du marché entreprise.</div></div>
+
+  <div class="term"><div class="t">MCP <span class="ab">— Model Context Protocol</span></div><div class="d">Standard <b>ouvert</b> qui permet de brancher un LLM aux outils internes d'une entreprise (drives, tickets, bases de données) sans développement sur-mesure.</div></div>
+
+  <div class="term"><div class="t">Constitutional AI</div><div class="d">Méthode d'entraînement d'Anthropic où le modèle suit une « constitution » de principes explicites pour être <b>utile, honnête et inoffensif</b> — la fiabilité par conception. C'est le différenciateur clé de Claude.</div></div>
+
+  <div class="term"><div class="t">Hallucination</div><div class="d">Quand un LLM produit une information fausse mais présentée comme vraie. Un risque que les décideurs (DSI, juridique) redoutent.</div></div>
+
+  <div class="term"><div class="t">Prompt</div><div class="d">La consigne/question envoyée au modèle. La qualité du prompt conditionne la qualité de la réponse.</div></div>
+</section>
+
+<!-- 02 -->
+<section>
+  <div class="sec-head"><span class="n">02</span><h2>Sécurité, conformité &amp; souveraineté</h2></div>
+  <p class="lead">Le cœur de l'argumentaire B2B : ce qui « débloque les comités sécurité ».</p>
+
+  <div class="term"><div class="t">SOC 2 <span class="ab">— Type I &amp; Type II</span></div><div class="d">Certification d'audit américaine sur la sécurité des données. <b>Type I</b> = les contrôles existent à un instant T ; <b>Type II</b> = ils fonctionnent dans la durée (plus exigeant).</div></div>
+
+  <div class="term"><div class="t">ISO 27001</div><div class="d">Norme internationale de référence pour le management de la <b>sécurité de l'information</b>.</div></div>
+
+  <div class="term"><div class="t">ISO/IEC 42001</div><div class="d">Première norme de management de l'<b>IA</b> (2023) — rare sur le marché. Atout différenciant de Claude pour la gouvernance.</div></div>
+
+  <div class="term"><div class="t">HIPAA</div><div class="d">Loi américaine protégeant les <b>données de santé</b>. « HIPAA-ready » = utilisable dans la santé sous contrat (BAA).</div></div>
+
+  <div class="term"><div class="t">FedRAMP</div><div class="d">Programme de certification de sécurité cloud du <b>secteur public américain</b> (« FedRAMP High » = niveau élevé).</div></div>
+
+  <div class="term"><div class="t">RGPD <span class="ab">— GDPR en anglais</span></div><div class="d">Règlement européen sur la <b>protection des données personnelles</b>. S'applique dès qu'un usage IA traite des données de personnes.</div></div>
+
+  <div class="term"><div class="t">AI Act</div><div class="d">Règlement européen sur l'IA. Échéance clé : pleine applicabilité le <b>2 août 2026</b>, sanctions jusqu'à <b>7 % du chiffre d'affaires mondial</b>. Moteur de l'urgence côté décideurs.</div></div>
+
+  <div class="term"><div class="t">GPAI <span class="ab">— General-Purpose AI</span></div><div class="d">« Modèle d'IA à usage général » au sens de l'AI Act (comme Claude) : obligations de documentation et de transparence spécifiques.</div></div>
+
+  <div class="term"><div class="t">CNIL</div><div class="d">L'autorité française de protection des données. A prononcé ~487 M€ de sanctions en 2025 — argument de risque dans le projet.</div></div>
+
+  <div class="term"><div class="t">DPA <span class="ab">— Data Processing Agreement</span></div><div class="d">Contrat encadrant le traitement des données personnelles entre un client et son fournisseur, exigé par le RGPD.</div></div>
+
+  <div class="term"><div class="t">Zero Data Retention (ZDR) / non-entraînement</div><div class="d"><b>ZDR :</b> les données ne sont pas conservées après la réponse. <b>Non-entraînement :</b> les données client ne servent pas à entraîner le modèle. Deux garanties contractuelles décisives.</div></div>
+
+  <div class="term"><div class="t">SSO <span class="ab">— Single Sign-On</span></div><div class="d">Authentification unique : se connecter à Claude avec les identifiants d'entreprise (Okta, Azure AD) déjà existants.</div></div>
+
+  <div class="term"><div class="t">SCIM</div><div class="d">Standard d'<b>approvisionnement automatique</b> des comptes : créer/supprimer les accès des collaborateurs automatiquement depuis l'annuaire RH/IT.</div></div>
+
+  <div class="term"><div class="t">RBAC <span class="ab">— Role-Based Access Control</span></div><div class="d">Gestion des droits <b>par rôle</b> : chaque profil n'accède qu'à ce qui le concerne.</div></div>
+
+  <div class="term"><div class="t">SIEM</div><div class="d">Outil de supervision de sécurité (Splunk, Datadog…) qui centralise les journaux. Claude peut y exporter ses <b>logs d'audit</b>.</div></div>
+
+  <div class="term"><div class="t">Allowlisting IP</div><div class="d">Restreindre l'accès à une liste d'adresses IP autorisées (ex. le réseau de l'entreprise).</div></div>
+
+  <div class="term"><div class="t">Shadow IT</div><div class="d">Outils utilisés par les salariés <b>hors contrôle</b> de la DSI (ex. un LLM grand public). Un risque que l'offre Enterprise vise à « gouverner ».</div></div>
+
+  <div class="term"><div class="t">Souveraineté / résidence des données</div><div class="d"><b>Résidence :</b> où sont physiquement stockées les données (ex. UE). <b>Souveraineté :</b> garder la maîtrise juridique et technique de ses données.</div></div>
+
+  <div class="term"><div class="t">Cloud Act</div><div class="d">Loi US permettant aux autorités américaines d'accéder à des données détenues par des entreprises US, même hébergées hors des États-Unis. Crainte fréquente en Europe.</div></div>
+
+  <div class="term"><div class="t">Trust Center / Trust Portal</div><div class="d">Espace en ligne où un éditeur publie ses certifications et documents de sécurité (souvent sous accord de confidentialité, « NDA »).</div></div>
+</section>
+
+<!-- 03 -->
+<section>
+  <div class="sec-head"><span class="n">03</span><h2>SEO — référencement naturel</h2></div>
+  <p class="lead">Comment une page se positionne « gratuitement » dans Google.</p>
+
+  <div class="term"><div class="t">SEO <span class="ab">— Search Engine Optimization</span></div><div class="d">L'ensemble des techniques pour qu'une page apparaisse haut dans les résultats de recherche <b>naturels</b> (non payants).</div></div>
+
+  <div class="term"><div class="t">Balises Hn (H1 → H6)</div><div class="d">Les <b>niveaux de titres</b> d'une page web, comme un plan hiérarchique : <b>H1</b> = titre principal (un seul par page), <b>H2</b> = grandes sections, <b>H3</b> = sous-sections… jusqu'à <b>H6</b>. Ils structurent le contenu pour le lecteur ET pour Google. <span class="p"><b>→ dans le projet :</b> on a cartographié les Hn de la page Claude Enterprise pour repérer les manques.</span></div></div>
+
+  <div class="term"><div class="t">Balise Title</div><div class="d">Le titre de l'onglet/du résultat Google. Très important pour le clic et le référencement.</div></div>
+
+  <div class="term"><div class="t">Meta description</div><div class="d">Le court texte descriptif affiché sous le titre dans les résultats Google. N'influence pas le classement mais le taux de clic.</div></div>
+
+  <div class="term"><div class="t">SERP <span class="ab">— Search Engine Results Page</span></div><div class="d">La page de résultats de Google pour une requête donnée.</div></div>
+
+  <div class="term"><div class="t">Mot-clé &amp; intention (intent)</div><div class="d"><b>Mot-clé :</b> la requête tapée. <b>Intention :</b> ce que cherche vraiment l'internaute (s'informer, comparer, acheter). On cible des mots-clés à intention commerciale.</div></div>
+
+  <div class="term"><div class="t">Maillage interne</div><div class="d">Les liens entre les pages d'un même site. Un bon maillage renforce l'autorité des pages importantes.</div></div>
+
+  <div class="term"><div class="t">TOFU / MOFU / BOFU</div><div class="d">Étapes de l'entonnoir de contenu : <b>TOFU</b> (haut, découverte), <b>MOFU</b> (milieu, évaluation), <b>BOFU</b> (bas, décision — ex. pages comparatives « Claude vs ChatGPT »).</div></div>
+
+  <div class="term"><div class="t">Trafic organique</div><div class="d">Les visites venant des résultats de recherche naturels (par opposition au trafic payant).</div></div>
+
+  <div class="term"><div class="t">Redirection 301 / canonicalisation</div><div class="d"><b>301 :</b> redirection permanente d'une URL vers une autre. <b>Canonicalisation :</b> désigner l'URL « officielle » d'un contenu pour éviter les doublons. Trop de 301 « diluent » le référencement.</div></div>
+
+  <div class="term"><div class="t">Featured snippet / People Also Ask</div><div class="d">Encadrés de réponse mis en avant par Google (souvent à partir de contenus en FAQ). On peut les viser avec des titres en forme de questions.</div></div>
+
+  <div class="term"><div class="t">E-E-A-T</div><div class="d">Critères de qualité Google : <b>E</b>xperience, <b>E</b>xpertise, <b>A</b>uthoritativeness, <b>T</b>rustworthiness. Les preuves chiffrées et témoignages les renforcent.</div></div>
+</section>
+
+<!-- 04 -->
+<section>
+  <div class="sec-head"><span class="n">04</span><h2>Performance web — PageSpeed / Lighthouse</h2></div>
+  <p class="lead">Mesurer la vitesse et la qualité technique d'un site.</p>
+
+  <div class="term"><div class="t">PageSpeed Insights</div><div class="d">Outil gratuit de Google qui note une page web et donne des recommandations de performance.</div></div>
+
+  <div class="term"><div class="t">Lighthouse</div><div class="d">Le moteur d'audit (intégré à Chrome) derrière PageSpeed. Donne 4 scores sur 100 : <b>Performance, Accessibilité, Bonnes pratiques, SEO</b>. <span class="p"><b>→ dans le projet :</b> on a mesuré Claude.com vs OpenAI.com avec Lighthouse, et notre propre app.</span></div></div>
+
+  <div class="term"><div class="t">Core Web Vitals</div><div class="d">Les indicateurs de Google sur l'<b>expérience de chargement</b> réellement ressentie : LCP, CLS, INP.</div></div>
+
+  <div class="term"><div class="t">LCP <span class="ab">— Largest Contentful Paint</span></div><div class="d">Temps d'affichage du <b>plus gros élément</b> visible (image/titre). Mesure la vitesse de chargement perçue. Bon &lt; 2,5 s.</div></div>
+
+  <div class="term"><div class="t">FCP <span class="ab">— First Contentful Paint</span></div><div class="d">Temps avant l'apparition du <b>premier contenu</b> à l'écran.</div></div>
+
+  <div class="term"><div class="t">CLS <span class="ab">— Cumulative Layout Shift</span></div><div class="d">Mesure la <b>stabilité visuelle</b> : à quel point la page « saute » pendant le chargement. Plus c'est proche de 0, mieux c'est. <span class="p"><b>→ dans le projet :</b> Claude ~0 (excellent) vs ChatGPT 0,05–0,08.</span></div></div>
+
+  <div class="term"><div class="t">INP / FID</div><div class="d"><b>INP</b> (Interaction to Next Paint, qui remplace l'ancien <b>FID</b>) mesure la <b>réactivité</b> de la page aux clics.</div></div>
+
+  <div class="term"><div class="t">TBT <span class="ab">— Total Blocking Time</span></div><div class="d">Temps pendant lequel la page est « figée » (le navigateur traite du JavaScript) et ne répond pas. Proxy de l'INP en labo.</div></div>
+
+  <div class="term"><div class="t">TTFB <span class="ab">— Time To First Byte</span></div><div class="d">Délai avant de recevoir le <b>premier octet</b> du serveur. Mesure la réactivité serveur/réseau. <span class="p"><b>→ dans le projet :</b> Claude ~40 ms (excellent, via CDN).</span></div></div>
+
+  <div class="term"><div class="t">Lab vs field (CrUX)</div><div class="d"><b>Lab :</b> mesure en conditions de test contrôlées. <b>Field / CrUX :</b> données réelles d'utilisateurs Chrome. Un score lab peut différer du terrain (d'où le « à confirmer » sur la perf concurrente).</div></div>
+
+  <div class="term"><div class="t">CDN <span class="ab">— Content Delivery Network</span></div><div class="d">Réseau de serveurs répartis dans le monde qui servent le contenu depuis le point le plus proche → site plus rapide.</div></div>
+
+  <div class="term"><div class="t">Bundle / code-splitting / lazy loading</div><div class="d"><b>Bundle :</b> le fichier JavaScript de l'app. <b>Code-splitting :</b> le découper en morceaux. <b>Lazy loading :</b> ne charger un morceau qu'au besoin → démarrage plus rapide. <span class="p"><b>→ dans le projet :</b> la section avec graphiques est chargée à part.</span></div></div>
+
+  <div class="term"><div class="t">gzip / Brotli (compression)</div><div class="d">Compression des fichiers envoyés par le serveur pour réduire leur poids et accélérer le chargement.</div></div>
+
+  <div class="term"><div class="t">woff2</div><div class="d">Format de <b>police web</b> compressé moderne. Les polices du projet (Fraunces, Inter) sont en woff2 et embarquées localement (offline).</div></div>
+</section>
+
+<!-- 05 -->
+<section>
+  <div class="sec-head"><span class="n">05</span><h2>UX &amp; architecture de l'information</h2></div>
+  <p class="lead">L'organisation et l'expérience de navigation du site.</p>
+
+  <div class="term"><div class="t">UX / UI</div><div class="d"><b>UX</b> (User Experience) = l'expérience d'usage globale. <b>UI</b> (User Interface) = l'apparence visuelle de l'interface.</div></div>
+
+  <div class="term"><div class="t">Arborescence / sitemap</div><div class="d">Le <b>plan hiérarchique</b> des pages d'un site (menus et sous-menus). <span class="p"><b>→ dans le projet :</b> on montre l'arborescence desktop &amp; mobile et où s'insère le produit Enterprise.</span></div></div>
+
+  <div class="term"><div class="t">Funnel (entonnoir de conversion)</div><div class="d">Le parcours du visiteur étape par étape (découverte → évaluation → achat). À chaque étape, on perd du monde — d'où l'image d'entonnoir.</div></div>
+
+  <div class="term"><div class="t">Menu hamburger</div><div class="d">L'icône à trois barres ☰ qui replie le menu sur mobile. Différence classique desktop/mobile.</div></div>
+
+  <div class="term"><div class="t">CTA <span class="ab">— Call To Action</span></div><div class="d">Bouton/lien incitant à l'action (« Contact sales », « Try Claude »). Sa clarté influence la conversion.</div></div>
+
+  <div class="term"><div class="t">Scrollytelling</div><div class="d">Technique de présentation où le <b>récit se déroule au fil du défilement</b> (scroll), avec animations. C'est le format de cette présentation (au lieu d'un PowerPoint).</div></div>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="sec-head"><span class="n">06</span><h2>Marketing B2B &amp; vente</h2></div>
+  <p class="lead">Le vocabulaire du plan d'action et des personas.</p>
+
+  <div class="term"><div class="t">B2B / B2C</div><div class="d"><b>B2B</b> (Business to Business) : vendre à des entreprises. <b>B2C</b> : vendre à des particuliers. Notre lancement est B2B.</div></div>
+
+  <div class="term"><div class="t">Persona</div><div class="d">Portrait-type d'un client cible, incarné (nom, âge, métier, motivations, freins). Sert à adapter le message. <span class="p"><b>→ dans le projet :</b> 3 personas — Sophie (DSI), Karim (CTO), Élodie (juridique).</span></div></div>
+
+  <div class="term"><div class="t">CSP <span class="ab">— Catégorie socioprofessionnelle</span></div><div class="d">Classification du métier/statut social (ex. « cadre dirigeant », « CSP+ »). Décrit le profil d'un persona.</div></div>
+
+  <div class="term"><div class="t">ABM <span class="ab">— Account-Based Marketing</span></div><div class="d">Marketing <b>ciblé compte par compte</b> : on identifie nominativement quelques grands comptes et on leur adresse un contenu sur-mesure. Cœur de l'Action 01.</div></div>
+
+  <div class="term"><div class="t">Lead / MQL / SQL</div><div class="d"><b>Lead :</b> contact intéressé. <b>MQL</b> (Marketing Qualified Lead) : lead qualifié par le marketing. <b>SQL</b> (Sales Qualified Lead) : lead jugé mûr pour la vente.</div></div>
+
+  <div class="term"><div class="t">Retargeting / display / affiliation / influence</div><div class="d">Leviers publicitaires : <b>retargeting</b> (recibler les visiteurs), <b>display</b> (bannières), <b>affiliation</b> (commission sur vente apportée), <b>influence</b> (créateurs/experts).</div></div>
+
+  <div class="term"><div class="t">Land-and-expand</div><div class="d">Stratégie : « atterrir » avec un petit déploiement (pilote), puis <b>étendre</b> progressivement à toute l'organisation. Mesuré par le NRR.</div></div>
+
+  <div class="term"><div class="t">Pipeline</div><div class="d">L'ensemble des opportunités de vente en cours, valorisées en euros. Indicateur de santé commerciale.</div></div>
+
+  <div class="term"><div class="t">Cycle de vente</div><div class="d">Le temps entre le premier contact et la signature. En B2B grands comptes, il est long (revues sécurité, achats…).</div></div>
+
+  <div class="term"><div class="t">ESN <span class="ab">— Entreprise de Services du Numérique</span></div><div class="d">Sociétés d'intégration/conseil IT (Sfeir, Capgemini, Sopra…). Partenaires pour déployer Claude chez les clients (Action 03).</div></div>
+
+  <div class="term"><div class="t">Comportements digitaux</div><div class="d">Les habitudes en ligne d'un persona (réseaux suivis, contenus consommés). Sert à choisir les canaux.</div></div>
+
+  <div class="term"><div class="t">Points de friction</div><div class="d">Les obstacles/objections qui freinent l'achat (ici : risque de fuite de données, coût, conformité).</div></div>
+
+  <div class="term"><div class="t">Proposition de valeur</div><div class="d">La promesse centrale : pourquoi choisir ce produit plutôt qu'un autre, exprimée en <b>bénéfices</b> pour le client.</div></div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="sec-head"><span class="n">07</span><h2>KPI &amp; finance</h2></div>
+  <p class="lead">Les indicateurs qui mesurent le succès du plan.</p>
+
+  <div class="term"><div class="t">KPI <span class="ab">— Key Performance Indicator</span></div><div class="d">Indicateur clé de performance : une mesure chiffrée d'un objectif. <span class="p"><b>→ dans le projet :</b> exactement 6 KPI reliés aux 3 actions.</span></div></div>
+
+  <div class="term"><div class="t">Baseline</div><div class="d">La valeur de départ (le « point zéro ») à partir de laquelle on mesure la progression d'un KPI.</div></div>
+
+  <div class="term"><div class="t">CAC <span class="ab">— Coût d'Acquisition Client</span></div><div class="d">Combien coûte (marketing + vente) l'acquisition d'un nouveau client.</div></div>
+
+  <div class="term"><div class="t">ACV <span class="ab">— Annual Contract Value</span></div><div class="d">Valeur annuelle moyenne d'un contrat. Un bon ratio cible : CAC &lt; ⅓ de l'ACV.</div></div>
+
+  <div class="term"><div class="t">ROI / ROAS</div><div class="d"><b>ROI :</b> retour sur investissement global. <b>ROAS</b> (Return On Ad Spend) : chiffre d'affaires généré par euro de pub.</div></div>
+
+  <div class="term"><div class="t">NRR <span class="ab">— Net Revenue Retention</span></div><div class="d">% de revenu conservé + développé sur les clients existants d'une année sur l'autre. <b>&gt; 100 %</b> = la base croît seule (land-and-expand réussi).</div></div>
+
+  <div class="term"><div class="t">Taux d'activation</div><div class="d">% d'utilisateurs qui adoptent réellement l'outil après inscription (ex. comptes actifs à 2,5 semaines).</div></div>
+
+  <div class="term"><div class="t">Time-to-contract</div><div class="d">Délai entre la qualification d'un prospect (SQL) et la signature. Plus il est court, plus la machine commerciale est efficace.</div></div>
+
+  <div class="term"><div class="t">Run-rate</div><div class="d">Revenu annualisé extrapolé à partir d'une période récente (ex. « 47 Md$ de run-rate » = rythme annuel projeté).</div></div>
+
+  <div class="term"><div class="t">CAGR</div><div class="d">Taux de croissance annuel moyen sur plusieurs années (Compound Annual Growth Rate).</div></div>
+
+  <div class="term"><div class="t">TCO <span class="ab">— Total Cost of Ownership</span></div><div class="d">Coût total de possession : prix du siège + usage + intégration. Ce que regarde vraiment un acheteur.</div></div>
+</section>
+
+<!-- 08 -->
+<section>
+  <div class="sec-head"><span class="n">08</span><h2>Outils utilisés</h2></div>
+  <p class="lead">Les outils du syllabus mobilisés pour l'analyse (un rôle unique chacun).</p>
+
+  <div class="term"><div class="t">SimilarWeb</div><div class="d">Outil d'estimation du <b>trafic et de l'audience</b> d'un site (volumes, géographie, sources). Sert à comparer claude.ai aux concurrents.</div></div>
+
+  <div class="term"><div class="t">Google Search</div><div class="d">Utilisé pour analyser la <b>visibilité de marque</b>, les mots-clés et la concurrence dans les résultats (SERP).</div></div>
+
+  <div class="term"><div class="t">GlooMaps</div><div class="d">Outil de création de <b>plans de site / arborescences</b> (sitemaps visuels).</div></div>
+
+  <div class="term"><div class="t">Web Developer (extension)</div><div class="d">Extension navigateur pour inspecter une page : balises, métadonnées, responsive, accessibilité.</div></div>
+
+  <div class="term"><div class="t">SEO Review Tools — Headings Checker</div><div class="d">Outil qui extrait la <b>hiérarchie des titres Hn</b> (H1→H6) d'une page.</div></div>
+
+  <div class="term"><div class="t">Canva</div><div class="d">Outil de création graphique pour les <b>visuels de campagne</b> et la direction artistique.</div></div>
+
+  <div class="term"><div class="t">Excel / Google Sheets</div><div class="d">Tableurs pour le <b>scoring personas</b>, le tableau de bord des KPI, le budget et les ratios (CAC/ROAS).</div></div>
+
+  <div class="term"><div class="t">Looker Studio</div><div class="d">Outil Google de tableaux de bord pour piloter les KPI en temps réel.</div></div>
+</section>
+
+<!-- 09 -->
+<section>
+  <div class="sec-head"><span class="n">09</span><h2>Stack technique &amp; déploiement</h2></div>
+  <p class="lead">Comment l'application a été construite et mise en ligne.</p>
+
+  <div class="term"><div class="t">Vite</div><div class="d">Outil moderne qui compile et sert l'application web (rapide, avec rechargement à chaud en développement).</div></div>
+
+  <div class="term"><div class="t">React</div><div class="d">Bibliothèque JavaScript pour construire des interfaces en <b>composants</b> réutilisables. Base de l'app.</div></div>
+
+  <div class="term"><div class="t">TypeScript</div><div class="d">JavaScript avec <b>typage</b> : détecte des erreurs avant l'exécution → code plus fiable.</div></div>
+
+  <div class="term"><div class="t">Framer Motion</div><div class="d">Bibliothèque d'<b>animations</b> React (apparitions au scroll, transitions douces de la présentation).</div></div>
+
+  <div class="term"><div class="t">Recharts</div><div class="d">Bibliothèque de <b>graphiques</b> React (le radar concurrentiel, les visualisations de données).</div></div>
+
+  <div class="term"><div class="t">Offline-safe</div><div class="d">L'app fonctionne <b>sans connexion</b> : aucune requête réseau au chargement (polices et données embarquées). Crucial pour une soutenance en huis clos.</div></div>
+
+  <div class="term"><div class="t">Build / dist</div><div class="d"><b>Build :</b> l'étape qui transforme le code source en fichiers optimisés. <b>dist :</b> le dossier de sortie statique prêt à servir.</div></div>
+
+  <div class="term"><div class="t">base path</div><div class="d">Le préfixe d'URL sous lequel l'app est servie (ex. <i>/claude-b2b-launch/</i> sur GitHub Pages, <i>/</i> en local).</div></div>
+
+  <div class="term"><div class="t">Git / GitHub</div><div class="d"><b>Git :</b> système de gestion de versions du code. <b>GitHub :</b> plateforme d'hébergement de ces dépôts.</div></div>
+
+  <div class="term"><div class="t">GitHub Pages</div><div class="d">Service d'hébergement de sites statiques <b>gratuit</b> de GitHub. <span class="p"><b>→ dans le projet :</b> héberge la démo en ligne.</span></div></div>
+
+  <div class="term"><div class="t">CI/CD — GitHub Actions</div><div class="d"><b>CI/CD :</b> automatisation de l'intégration et du déploiement. <b>GitHub Actions :</b> l'outil qui, à chaque envoi de code, rebuild et redéploie la démo automatiquement.</div></div>
+
+  <div class="term"><div class="t">Playwright</div><div class="d">Outil qui pilote un navigateur de façon automatisée : captures d'écran, audits Lighthouse, tests — utilisé pour mesurer et exporter le PDF.</div></div>
+</section>
+
+</body>
+</html>
